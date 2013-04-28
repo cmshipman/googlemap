@@ -1,0 +1,41 @@
+ <!DOCTYPE html>
+<html>
+<head>
+<script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyDiGXxmwfWme-Mn-r5e2VhV71hPGGtcNv8&sensor=false">
+</script>
+  	
+<script>
+//standard google maps function
+function initialize()
+{
+var mapOptions = {
+  center:new google.maps.LatLng(38.4136, -78.865),
+  zoom:5,
+  mapTypeId:google.maps.MapTypeId.ROADMAP
+  };
+var map=new google.maps.Map(document.getElementById("googleMap"),mapOptions);TestMarker();
+}
+
+google.maps.event.addDomListener(window, 'load', initialize);
+
+// function for adding a marker to the page 
+function addMarker(location) {
+	marker = new google.maps.Marker({
+      position: location,
+      map: map
+	});
+}
+
+//testing add marker function 
+function TestMarker() {
+	JMU = new google.maps.LatLng(38.4136, -78.865);
+    addMarker(JMU);
+}      
+</script>
+</head>
+
+<body>
+<div id="googleMap" style="width:2000px;height:800px;"></div>
+
+</body>
+</html> 
